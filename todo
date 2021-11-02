@@ -7,6 +7,7 @@
 - сверстать 640 адаптив
 - сверстать 320 адаптив
 - Сверить файлы проекты, убрать лишнее
+- Проверить alt атрибуты
 //////////////////////////////////
 Пример вставки картинки под ретину @2x @3x @4x
 А так же для webp
@@ -17,7 +18,7 @@
             image/header/logo.webp    1x,
             image/header/logo@2x.webp 2x,
             image/header/logo@3x.webp 3x,
-            image/header/logo@3x.webp 3x
+            image/header/logo@4x.webp 4x
           " />
         <img
           src="image/header/logo.png"
@@ -25,7 +26,28 @@
           srcset="
             image/header/logo@2x.png 2x,
             image/header/logo@3x.png 3x,
-            image/header/logo@3x.png 3x
+            image/header/logo@4x.png 4x
           "
       /></picture>
 ///////////////////////////////////////
+          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+          <picture>
+            <!-- <source
+class='description__image'
+              type="image/webp"
+              srcset="
+                image/description/example-1/example-1.webp    1x,
+                image/description/example-1/example-1@2x.webp 2x,
+                image/description/example-1/example-1@3x.webp 3x,
+                image/description/example-1/example-1@4x.webp 4x
+              " /> -->
+            <img class='description__image'
+              src="image/description/example-1/example-1.png"
+              alt="Пример ношения портупей"
+              srcset="
+                image/description/example-1/example-1@2x.png 2x,
+                image/description/example-1/example-1@3x.png 3x,
+                image/description/example-1/example-1@4x.png 4x
+              "
+          /></picture>
+/////////////////////////////////////////
