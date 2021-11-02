@@ -137,10 +137,56 @@
   width: 100%;
   overflow: hidden;
 }
-.description__wrapper {
-}
 .description__image {
   width: 320px;
   height: 320px;
   object-fit: cover;
+}
+/* ---Description--- */
+/* Table */
+.table {
+  font-family: "Open Sans";
+  color: #1e1e1e;
+  padding: 40px 0 50px 0;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* FIXME сжать картинку */
+  background-image: url(../image/table/table-bg.png);
+}
+.table__header {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+table {
+  width: 940px;
+  margin: 0 auto;
+  border: 30px solid #ffffff;
+  margin-top: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  line-height: 48px;
+  font-size: 14px;
+}
+tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+th {
+  font-weight: 700;
+}
+td {
+  font-weight: 400;
+  text-align: center;
+  padding: 0 30px;
+}
+tr:nth-child(2) > td {
+  font-weight: 700;
+}
+tr > td:first-child {
+  font-weight: 700;
+  text-align: left;
 }
