@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dr.Harness</title>
+    <!-- Подключение шрифтов с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <!-- FIXME Сжать изображения, заменить webp на сжатые -->
+      <picture>
+        <source
+          class="header__img"
+          type="image/webp"
+          srcset="
+            image/header/logo.webp    1x,
+            image/header/logo@2x.webp 2x,
+            image/header/logo@3x.webp 3x,
+            image/header/logo@4x.webp 4x
+          " />
+        <img
+          class="header__img"
+          src="image/header/logo.png"
+          alt=""
+          srcset="
+            image/header/logo@2x.png 2x,
+            image/header/logo@3x.png 3x,
+            image/header/logo@4x.png 4x
+          "
+      /></picture>
+      <nav class="header__nav">
+        <a class="header__nav-link" href="#">Каталог</a>
+        <a class="header__nav-link" href="#">Преимущества</a>
+        <a class="header__nav-link" href="#">Отзывы</a>
+        <a class="header__nav-link" href="#">Как заказать</a>
+      </nav>
+    </header>
+  </body>
 </html>

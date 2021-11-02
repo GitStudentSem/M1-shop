@@ -1,0 +1,32 @@
+.header
+  width: 954px
+  margin: 0 auto
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 68px
+  &__nav
+    &-link
+      color: #1e1e1e
+      font-family: "Open Sans"
+      font-size: 16px
+      font-weight: 400
+      line-height: 20px
+      text-transform: uppercase
+      text-decoration: none
+      margin-left: 28px
+      position: relative
+      &:hover
+        &::after
+          transform: scaleX(1)
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        display: block
+        width: 100%
+        transform: scaleX(0)
+        height: 2px
+        background-color: #1e1e1e
+        transition: 0.2s
