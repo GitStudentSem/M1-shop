@@ -190,3 +190,198 @@ tr > td:first-child {
   font-weight: 700;
   text-align: left;
 }
+/* ---Table--- */
+/* Catalog */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.catalog__title {
+  color: #1e1e1e;
+  font-family: "Open Sans";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 29px;
+}
+.catalog__inputs {
+  margin: 30px 0;
+}
+.catalog__input {
+  display: none;
+}
+.catalog__label {
+  color: #1e1e1e;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #f3f3f3;
+  padding: 25px 35px;
+  cursor: pointer;
+}
+.catalog__input:checked + .catalog__label {
+  color: #ffffff;
+  background-color: #ba0152;
+  transition: 0.3s;
+}
+.catalog__type {
+  width: 940px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.erotic {
+  display: none;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #dbdbdf;
+  margin-bottom: 20px;
+  position: relative;
+}
+.card__image {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+}
+.card__discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #b4014e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__discount-percent {
+  color: #e6e6e6;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+}
+.card__title {
+  color: #1e1e1e;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+}
+/* radio button size */
+.card__size {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.card__size-input {
+  display: none;
+}
+.card__size-input:disabled + .card__size-label {
+  color: #ceced3;
+}
+
+.card__size-label {
+  color: #1e1e1e;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 5px;
+  border: 1px solid transparent;
+}
+.card__size-input:checked + .card__size-label {
+  border: 1px solid #ba0152;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+/* radio button color */
+.card__color {
+  display: flex;
+  margin-bottom: 20px;
+}
+.card__color-input {
+  display: none;
+}
+.card__color-input:disabled + .card__color-label {
+  display: none;
+}
+
+.card__color-label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #dbdbdf;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.card__color-black {
+  background-color: #000000;
+}
+.card__color-red {
+  background-color: #ff0000;
+}
+.card__color-input:checked + .card__color-label {
+  border: 2px solid rgb(4, 185, 49);
+  transition: all 0.3s;
+}
+.card__price {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.card__price-old {
+  color: #8c8c8c;
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-decoration: line-through;
+}
+.card__price-new {
+  color: #b4014e;
+  font-family: "Open Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: right;
+}
+.card__order {
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 260px;
+  height: 56px;
+  box-shadow: 0 4px 0 #375cb3;
+  border: none;
+  border-radius: 4px;
+  background-color: #e8a900;
+  background-image: linear-gradient(to top, #4776e6 0%, #8e54e9 100%);
+  cursor: pointer;
+}
