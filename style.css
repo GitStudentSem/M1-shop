@@ -229,11 +229,11 @@ tr > td:first-child {
   background-color: #f3f3f3;
   padding: 25px 35px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .catalog__input:checked + .catalog__label {
   color: #ffffff;
   background-color: #ba0152;
-  transition: 0.3s;
 }
 .catalog__type {
   width: 940px;
@@ -257,14 +257,25 @@ tr > td:first-child {
   width: 300px;
   height: 350px;
   overflow: hidden;
+  position: relative;
 }
-.card__image {
+.card__image-item {
   width: 300px;
   height: 350px;
   object-fit: cover;
-  transition: 0.5s;
+  transition: 0.7s;
 }
-.card__image:hover {
+.card__image {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+.card__image-active {
+  opacity: 1;
+  z-index: 1;
+}
+.card__image-active:hover {
   transform: scale(1.3);
 }
 .card__discount {
@@ -347,6 +358,7 @@ tr > td:first-child {
   border: 2px solid #dbdbdf;
   cursor: pointer;
   margin: 0 5px;
+  transition: all 0.3s;
 }
 .card__color-black {
   background-color: #000000;
@@ -356,8 +368,10 @@ tr > td:first-child {
 }
 .card__color-input:checked + .card__color-label {
   border: 2px solid rgb(0, 255, 64);
-  transition: all 0.3s;
 }
+/* .card__color-checked {
+  border: 2px solid rgb(0, 255, 64);
+} */
 .card__price {
   width: 70%;
   display: flex;
