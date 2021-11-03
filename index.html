@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
   </head>
   <body>
     <header class="header">
@@ -64,7 +65,7 @@
     <section class="description">
       <div class="description__wrapper">
         <h2 class="description__title">
-          Хит №1 в мире – модные жеские портупеи 2017
+          Хит №1 в мире – модные жеские портупеи
         </h2>
         <div class="line"></div>
         <p class="description__text">
@@ -316,25 +317,28 @@
       <div class="catalog__type everyday">
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Peppi/black/Peppi_black.png 1x,
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                image/catalog/Peppi/black/Peppi_black.webp 1x,
+                image/catalog/Peppi/black/Peppi_black@2x.webp 2x,
+                image/catalog/Peppi/black/Peppi_black@3x.webp 3x,
+                image/catalog/Peppi/black/Peppi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Peppi/black/Peppi_black.png"
-              alt="Портупея 'Пеппи' черная"
-              srcset="
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Peppi/black/Peppi_black.png"
+                alt="Портупея 'Пеппи' черная"
+                srcset="
+                  image/catalog/Peppi/black/Peppi_black@2x.png 2x,
+                  image/catalog/Peppi/black/Peppi_black@3x.png 3x,
+                  image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -429,25 +433,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Vladi/Vladi_black.png 1x,
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
+                image/catalog/Vladi/Vladi_black.webp 1x,
+                image/catalog/Vladi/Vladi_black@2x.webp 2x,
+                image/catalog/Vladi/Vladi_black@3x.webp 3x,
+                image/catalog/Vladi/Vladi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Vladi/Vladi_black.png"
-              alt="Портупея “Влади” черная"
-              srcset="
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Vladi/Vladi_black.png"
+                alt="Портупея “Влади” черная"
+                srcset="
+                  image/catalog/Vladi/Vladi_black@2x.png 2x,
+                  image/catalog/Vladi/Vladi_black@3x.png 3x,
+                  image/catalog/Vladi/Vladi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -528,25 +535,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png.png 1x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
+                image/catalog/Jony_Miller/red/Jony_Miller_red.webp 1x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@2x.webp 2x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@3x.webp 3x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
-              alt="Портупея “Джони Миллер” красная"
-              srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
+                alt="Портупея “Джони Миллер” красная"
+                srcset="
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@2x.png 2x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@3x.png 3x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -641,25 +651,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Peppi/black/Peppi_black.png 1x,
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                image/catalog/Peppi/black/Peppi_black.webp 1x,
+                image/catalog/Peppi/black/Peppi_black@2x.webp 2x,
+                image/catalog/Peppi/black/Peppi_black@3x.webp 3x,
+                image/catalog/Peppi/black/Peppi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Peppi/black/Peppi_black.png"
-              alt="Портупея 'Пеппи' черная"
-              srcset="
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Peppi/black/Peppi_black.png"
+                alt="Портупея 'Пеппи' черная"
+                srcset="
+                  image/catalog/Peppi/black/Peppi_black@2x.png 2x,
+                  image/catalog/Peppi/black/Peppi_black@3x.png 3x,
+                  image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -754,25 +767,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Vladi/Vladi_black.png 1x,
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
+                image/catalog/Vladi/Vladi_black.webp 1x,
+                image/catalog/Vladi/Vladi_black@2x.webp 2x,
+                image/catalog/Vladi/Vladi_black@3x.webp 3x,
+                image/catalog/Vladi/Vladi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Vladi/Vladi_black.png"
-              alt="Портупея “Влади” черная"
-              srcset="
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Vladi/Vladi_black.png"
+                alt="Портупея “Влади” черная"
+                srcset="
+                  image/catalog/Vladi/Vladi_black@2x.png 2x,
+                  image/catalog/Vladi/Vladi_black@3x.png 3x,
+                  image/catalog/Vladi/Vladi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -853,25 +869,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png.png 1x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
+                image/catalog/Jony_Miller/red/Jony_Miller_red.webp 1x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@2x.webp 2x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@3x.webp 3x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
-              alt="Портупея “Джони Миллер” красная"
-              srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
+                alt="Портупея “Джони Миллер” красная"
+                srcset="
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@2x.png 2x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@3x.png 3x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -968,25 +987,28 @@
       <div class="catalog__type erotic">
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Peppi/black/Peppi_black.png 1x,
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                image/catalog/Peppi/black/Peppi_black.webp 1x,
+                image/catalog/Peppi/black/Peppi_black@2x.webp 2x,
+                image/catalog/Peppi/black/Peppi_black@3x.webp 3x,
+                image/catalog/Peppi/black/Peppi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Peppi/black/Peppi_black.png"
-              alt="Портупея 'Пеппи' черная"
-              srcset="
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Peppi/black/Peppi_black.png"
+                alt="Портупея 'Пеппи' черная"
+                srcset="
+                  image/catalog/Peppi/black/Peppi_black@2x.png 2x,
+                  image/catalog/Peppi/black/Peppi_black@3x.png 3x,
+                  image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1081,25 +1103,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Vladi/Vladi_black.png 1x,
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
+                image/catalog/Vladi/Vladi_black.webp 1x,
+                image/catalog/Vladi/Vladi_black@2x.webp 2x,
+                image/catalog/Vladi/Vladi_black@3x.webp 3x,
+                image/catalog/Vladi/Vladi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Vladi/Vladi_black.png"
-              alt="Портупея “Влади” черная"
-              srcset="
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Vladi/Vladi_black.png"
+                alt="Портупея “Влади” черная"
+                srcset="
+                  image/catalog/Vladi/Vladi_black@2x.png 2x,
+                  image/catalog/Vladi/Vladi_black@3x.png 3x,
+                  image/catalog/Vladi/Vladi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1180,25 +1205,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png.png 1x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
+                image/catalog/Jony_Miller/red/Jony_Miller_red.webp 1x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@2x.webp 2x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@3x.webp 3x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
-              alt="Портупея “Джони Миллер” красная"
-              srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
+                alt="Портупея “Джони Миллер” красная"
+                srcset="
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@2x.png 2x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@3x.png 3x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1293,25 +1321,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Peppi/black/Peppi_black.png 1x,
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                image/catalog/Peppi/black/Peppi_black.webp 1x,
+                image/catalog/Peppi/black/Peppi_black@2x.webp 2x,
+                image/catalog/Peppi/black/Peppi_black@3x.webp 3x,
+                image/catalog/Peppi/black/Peppi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Peppi/black/Peppi_black.png"
-              alt="Портупея 'Пеппи' черная"
-              srcset="
-                image/catalog/Peppi/black/Peppi_black@2x.png 2x,
-                image/catalog/Peppi/black/Peppi_black@3x.png 3x,
-                image/catalog/Peppi/black/Peppi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Peppi/black/Peppi_black.png"
+                alt="Портупея 'Пеппи' черная"
+                srcset="
+                  image/catalog/Peppi/black/Peppi_black@2x.png 2x,
+                  image/catalog/Peppi/black/Peppi_black@3x.png 3x,
+                  image/catalog/Peppi/black/Peppi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1406,25 +1437,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Vladi/Vladi_black.png 1x,
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
+                image/catalog/Vladi/Vladi_black.webp 1x,
+                image/catalog/Vladi/Vladi_black@2x.webp 2x,
+                image/catalog/Vladi/Vladi_black@3x.webp 3x,
+                image/catalog/Vladi/Vladi_black@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Vladi/Vladi_black.png"
-              alt="Портупея “Влади” черная"
-              srcset="
-                image/catalog/Vladi/Vladi_black@2x.png 2x,
-                image/catalog/Vladi/Vladi_black@3x.png 3x,
-                image/catalog/Vladi/Vladi_black@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Vladi/Vladi_black.png"
+                alt="Портупея “Влади” черная"
+                srcset="
+                  image/catalog/Vladi/Vladi_black@2x.png 2x,
+                  image/catalog/Vladi/Vladi_black@3x.png 3x,
+                  image/catalog/Vladi/Vladi_black@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1505,25 +1539,28 @@
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source class='card__image'
+          <div class="card__img-wrapper">
+            <picture>
+              <!-- <source class='card__image'
               type="image/webp"
               srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png.png 1x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
+                image/catalog/Jony_Miller/red/Jony_Miller_red.webp 1x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@2x.webp 2x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@3x.webp 3x,
+                image/catalog/Jony_Miller/red/Jony_Miller_red@4x.webp 4x
               " /> -->
-            <img
-              class="card__image"
-              src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
-              alt="Портупея “Джони Миллер” красная"
-              srcset="
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@2x.png 2x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@3x.png 3x,
-                image/catalog/Jony_Miller/red/Jony_Miller_red.png@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="card__image"
+                src="image/catalog/Jony_Miller/red/Jony_Miller_red.png"
+                alt="Портупея “Джони Миллер” красная"
+                srcset="
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@2x.png 2x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@3x.png 3x,
+                  image/catalog/Jony_Miller/red/Jony_Miller_red@4x.png 4x
+                "
+            /></picture>
+          </div>
+
           <div class="card__discount">
             <p class="card__discount-percent">-53%</p>
           </div>
@@ -1622,43 +1659,49 @@
       <h2 class="order__title">Как закзать?</h2>
       <div class="line"></div>
       <div class="order__icons">
-        <div class="order__circle">
-          <img
-            class="order__icon"
-            src="image/order/list.svg"
-            alt="Иконка газеты"
-          />
+        <div class="order__step">
+          <div class="order__circle">
+            <img
+              class="order__icon"
+              src="image/order/list.svg"
+              alt="Иконка газеты"
+            />
+          </div>
+          <p class="order__text-step">Вы оформляете заказ на нашем сайте</p>
         </div>
-        <div class="order__circle">
-          <img
-            class="order__icon"
-            src="image/order/people.svg"
-            alt="Иконка человека"
-          />
+        <div class="order__step">
+          <div class="order__circle">
+            <img
+              class="order__icon"
+              src="image/order/people.svg"
+              alt="Иконка человека"
+            />
+          </div>
+          <p class="order__text-step">
+            Менеджр перезвонит для уточнения деталей заказа
+          </p>
         </div>
-        <div class="order__circle">
-          <img
-            class="order__icon"
-            src="image/order/box.svg"
-            alt="Иконка коробки"
-          />
+        <div class="order__step">
+          <div class="order__circle">
+            <img
+              class="order__icon"
+              src="image/order/box.svg"
+              alt="Иконка коробки"
+            />
+          </div>
+          <p class="order__text-step">В ближайшее время отправляем ваш заказ</p>
         </div>
-        <div class="order__circle">
-          <img
-            class="order__icon"
-            src="image/order/card.svg"
-            alt="Иконка банковской карты"
-          />
+        <div class="order__step">
+          <div class="order__circle">
+            <img
+              class="order__icon"
+              src="image/order/card.svg"
+              alt="Иконка банковской карты"
+            />
+          </div>
+          <p class="order__text-step">Вы оплачиваете заказ при получении</p>
         </div>
-      </div>
-      <img src="image/order/line.svg" alt="Отрезки шагов" />
-      <div class="order__text">
-        <p class="order__text-step">Вы оформляете заказ на нашем сайте</p>
-        <p class="order__text-step">
-          Менеджр перезвонит для уточнения деталей заказа
-        </p>
-        <p class="order__text-step">В ближайшее время отправляем ваш заказ</p>
-        <p class="order__text-step">Вы оплачиваете заказ при получении</p>
+        <img src="image/order/line.svg" alt="Шаги для заказа" />
       </div>
     </footer>
   </body>
