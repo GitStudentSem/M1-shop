@@ -448,7 +448,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -550,7 +550,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -685,7 +685,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -820,7 +820,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -922,7 +922,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1057,7 +1057,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
       </div>
       <div class="catalog__type erotic">
@@ -1194,7 +1194,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1329,7 +1329,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1431,7 +1431,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1566,7 +1566,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1701,7 +1701,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
@@ -1803,7 +1803,7 @@
             <span class="card__price-old">4990 р.</span>
             <span class="card__price-new">2990 р.</span>
           </div>
-          <button class="card__order">Заказать</button>
+          <button class="card__order button">Заказать</button>
         </div>
       </div>
     </section>
@@ -1856,5 +1856,48 @@
         <img src="image/order/line.svg" alt="Шаги для заказа" />
       </div>
     </footer>
+
+    <div class="popup">
+      <div class="popup__window">
+        <div class="popup__img-wrapper">
+          <!-- Изображение сюда вставляется динамически из JS -->
+        </div>
+        <form action="#" class="popup__form">
+          <!-- <button class="popup__close"> -->
+          <img
+            class="popup__close"
+            src="image/popup/close.svg"
+            alt="Закрыть модальное окно"
+          />
+          <!-- </button> -->
+          <h3 class="popup__title">
+            <!-- Имя подставляется динамически -->
+          </h3>
+          <div class="popup__price">
+            <span class="popup__price-old">
+              <!-- Старая цена подставляется динамически -->
+            </span>
+            <span class="popup__price-new">
+              <!-- Новая цена подставляется динамически -->
+            </span>
+          </div>
+
+          <select class="popup__size popup__input">
+            <!-- Размеры подставляются динамически -->
+          </select>
+          <input
+            type="text"
+            class="popup__name popup__input"
+            placeholder="Введите ваше имя"
+          />
+          <input
+            type="text"
+            class="popup__phone popup__input"
+            placeholder="Введите ваш телефон"
+          />
+          <button class="popup__order button">Оформить заказ</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
