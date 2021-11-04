@@ -40,10 +40,10 @@
           "
       /></picture>
       <nav class="header__nav">
-        <a class="header__nav-link" href="#">Каталог</a>
-        <a class="header__nav-link" href="#">Преимущества</a>
-        <a class="header__nav-link" href="#">Отзывы</a>
-        <a class="header__nav-link" href="#">Как заказать</a>
+        <a class="header__nav-link" href="#catalog">Каталог</a>
+        <a class="header__nav-link" href="#description">Преимущества</a>
+        <a class="header__nav-link" href="#!">Отзывы</a>
+        <a class="header__nav-link" href="#order">Как заказать</a>
       </nav>
     </header>
     <main class="main">
@@ -58,11 +58,11 @@
         </div>
       </div>
       <div class="main__button-wrapper">
-        <button class="main__button">повседневные портупеи</button>
-        <button class="main__button">Эротические портупеи</button>
+        <a href="#everyday" class="main__button">повседневные портупеи</a>
+        <a href="#erotic" class="main__button">Эротические портупеи</a>
       </div>
     </main>
-    <section class="description">
+    <section class="description" id="description">
       <div class="description__wrapper">
         <h2 class="description__title">
           Хит №1 в мире – модные жеские портупеи
@@ -297,7 +297,7 @@
         </tr>
       </table>
     </section>
-    <section class="catalog">
+    <section class="catalog" id="catalog">
       <h2 class="catalog__title">Каталог</h2>
       <div class="line"></div>
       <div class="catalog__inputs">
@@ -305,16 +305,23 @@
           class="catalog__input"
           type="radio"
           name="type"
-          id="everyday"
+          id="everyday-input"
           checked
         />
-        <label class="catalog__label" for="everyday"
+        <label class="catalog__label" for="everyday-input"
           >повседневные портупеи</label
         >
-        <input class="catalog__input" type="radio" name="type" id="erotic" />
-        <label class="catalog__label" for="erotic">эротичесские портупеи</label>
+        <input
+          class="catalog__input"
+          type="radio"
+          name="type"
+          id="erotic-input"
+        />
+        <label class="catalog__label" for="erotic-input"
+          >эротичесские портупеи</label
+        >
       </div>
-      <div class="catalog__type everyday">
+      <div class="catalog__type everyday catalog__type-active" id="everyday">
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
           <div class="card__img-wrapper">
@@ -1060,7 +1067,7 @@
           <button class="card__order button">Заказать</button>
         </div>
       </div>
-      <div class="catalog__type erotic">
+      <div class="catalog__type erotic" id="erotic">
         <div class="card">
           <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
           <div class="card__img-wrapper">
@@ -1807,7 +1814,7 @@
         </div>
       </div>
     </section>
-    <footer class="order">
+    <footer class="order" id="order">
       <h2 class="order__title">Как закзать?</h2>
       <div class="line"></div>
       <div class="order__icons">
@@ -1891,11 +1898,13 @@
             placeholder="Введите ваше имя"
           />
           <input
-            type="text"
+            type="number"
             class="popup__phone popup__input"
             placeholder="Введите ваш телефон"
           />
-          <button class="popup__order button">Оформить заказ</button>
+          <button class="popup__order button" type="submit" disabled>
+            Оформить заказ
+          </button>
         </form>
       </div>
     </div>

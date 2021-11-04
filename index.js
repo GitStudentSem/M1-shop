@@ -11,19 +11,24 @@ let option;
 let sizes = [];
 // Запоминаю выбранный размер для модалки
 let optionActive;
+// Блоки категорий
+const everyday = document.querySelector(".everyday");
+const erotic = document.querySelector(".erotic");
 
+// Показать блок категории
+const showCategoryBlock = (showBlock, hideBlock) => {
+  showBlock.classList.add("catalog__type-active");
+  hideBlock.classList.remove("catalog__type-active");
+};
 // Выбор категории товаров
 const categorySelection = () => {
   const inputs = document.querySelector(".catalog__inputs");
-  const everyday = document.querySelector(".everyday");
-  const erotic = document.querySelector(".erotic");
   inputs.addEventListener("click", (e) => {
-    if (e.target.checked && e.target.id === "everyday") {
-      erotic.style.display = "none";
-      everyday.style.display = "flex";
-    } else if (e.target.checked && e.target.id === "erotic") {
-      erotic.style.display = "flex";
-      everyday.style.display = "none";
+    let target = e.target;
+    if (target.checked && target.id === "everyday-input") {
+      showCategoryBlock(everyday, erotic);
+    } else if (target.checked && target.id === "erotic-input") {
+      showCategoryBlock(erotic, everyday);
     }
   });
 };
@@ -37,6 +42,45 @@ const disableScrolling = () => {
     window.scrollTo(x, y);
   };
 };
+
+// Функция для плавного скролла
+const smoothScroll = (scrollLink) => {
+  const id = scrollLink.getAttribute("href");
+  console.log(document.querySelector(id));
+  document.querySelector(id).scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+// Отправка в разные секции из шапки
+const navMenu = document.querySelector(".header__nav");
+navMenu.addEventListener("click", (e) => {
+  let target = e.target;
+  e.preventDefault();
+  if (target.getAttribute("href") === "#catalog") {
+    smoothScroll(target);
+  } else if (target.getAttribute("href") === "#description") {
+    smoothScroll(target);
+  } else if (target.getAttribute("href") === "#order") {
+    smoothScroll(target);
+  }
+});
+// Отправление в каталог из главной секции
+const mainButtons = document.querySelector(".main__button-wrapper");
+mainButtons.addEventListener("click", (e) => {
+  let target = e.target;
+  e.preventDefault();
+  const everyDayInput = document.getElementById("everyday-input");
+  const eroticInput = document.getElementById("erotic-input");
+  if (target.getAttribute("href") === "#everyday") {
+    showCategoryBlock(everyday, erotic);
+    everyDayInput.checked = true;
+  } else if (target.getAttribute("href") === "#erotic") {
+    showCategoryBlock(erotic, everyday);
+    eroticInput.checked = true;
+  }
+  smoothScroll(target);
+});
 
 // Открытие модального окна
 const openModalWindow = () => {
@@ -63,6 +107,33 @@ popup.addEventListener("click", (e) => {
   }
 });
 
+//Валидация полей в модалке
+const formSubmit = (input) => {
+  const name = document.querySelector(".popup__name");
+  const phone = document.querySelector(".popup__phone");
+  const form = document.querySelector(".popup__form");
+  const orderButton = document.querySelector(".popup__order");
+
+  const validation = (input) => {
+    if (!input.value.trim()) {
+      input.classList.add("popup__error");
+      return false;
+    } else {
+      input.classList.remove("popup__error");
+      return true;
+    }
+  };
+
+  // Блокировка кнопки отправить при не валидных полях
+  form.addEventListener("input", () => {
+    if (validation(name) && validation(phone)) {
+      orderButton.disabled = false;
+    } else {
+      orderButton.disabled = true;
+    }
+  });
+};
+formSubmit();
 // Слушатель событий внутри карточки
 const cardListener = () => {
   const cards = document.querySelectorAll(".card");
