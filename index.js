@@ -85,8 +85,68 @@ mainButtons.addEventListener("click", (e) => {
   smoothScroll(target);
 });
 
+const addSizeToModal = (card) => {
+  const inputsSize = card.querySelectorAll(".card__size-input");
+  // Добавляю варианты размеров в модалку
+  // Перебираю все варианты размеров
+  inputsSize.forEach((input) => {
+    // Записываю только активные размеры
+    if (!input.disabled) {
+      sizes.push(input.value);
+    }
+    // Сохраняю выбранный размер
+    if (input.checked) {
+      optionActive = input;
+    }
+  });
+
+  // Перебираю массив размеров и создаю <option></option> для каждого
+  sizes.forEach((size) => {
+    option = document.createElement("option");
+    option.value = size;
+    option.innerHTML = size;
+    // Вставляю сохраненный выбранный рамер в модалку
+    if (optionActive && optionActive.value === size) {
+      option.selected = true;
+    }
+    popupSize.appendChild(option);
+  });
+};
+
+const addPictureToModal = (photos) => {
+  // Перебор картинок товара, для выбора активной
+  photos.forEach((photo) => {
+    if (photo.classList.contains("card__image-active")) {
+      // Создаю копию картинки для модального окна
+      imagePopup = photo.cloneNode(true);
+      // Добавить картинку выбранного товара в модалку
+      imagePopupContainer.appendChild(imagePopup);
+    }
+  });
+};
+
+const addTextContentToModal = (card) => {
+  // Вставка имени товара в модальное окно
+  let cardName = card.querySelector(".card__title");
+  let popupTitle = document.querySelector(".popup__title");
+  // innerHTML использовал намеренно для затирки предыдущего значения
+  popupTitle.innerHTML = cardName.textContent;
+
+  // Вставка цены на товар в модальное окно
+  let oldPrice = card.querySelector(".card__price-old");
+  let newPrice = card.querySelector(".card__price-new");
+  let popupNewPrice = document.querySelector(".popup__price-new");
+  let popupOldPrice = document.querySelector(".popup__price-old");
+  // innerHTML использовал намеренно для затирки предыдущего значения
+  popupNewPrice.innerHTML = newPrice.textContent;
+  popupOldPrice.innerHTML = oldPrice.textContent;
+};
+
 // Открытие модального окна
-const openModalWindow = () => {
+const openModalWindow = (card, photos) => {
+  addSizeToModal(card);
+  addPictureToModal(photos);
+  addTextContentToModal(card);
   popup.classList.add("popup__active");
 };
 
@@ -112,6 +172,7 @@ const closeModal = () => {
 popup.addEventListener("click", (e) => {
   target = e.target;
   if (
+    // отлавливаю клик по кнопке закрыть или по оверлею
     target.classList.contains("popup__active") ||
     target.classList.contains("popup__close")
   ) {
@@ -130,7 +191,6 @@ const cardListener = () => {
     card.addEventListener("click", (e) => {
       let target = e.target;
       const photos = card.querySelectorAll(".card__image");
-
       // фильтрация выбора цвета
       if (target.checked && target.name === "color") {
         photos.forEach((photo) => {
@@ -138,70 +198,19 @@ const cardListener = () => {
           photo.classList.remove("card__image-active");
           if (
             // фильтрую красную фотографию
-            target.value === "red" &&
-            photo.getAttribute("data-color") === "red"
+            target.value === photo.getAttribute("data-color")
           ) {
             photo.classList.add("card__image-active");
           } else if (
             // фильтрую черную фотографию
-            target.value === "black" &&
-            photo.getAttribute("data-color") === "black"
+            target.value === photo.getAttribute("data-color")
           ) {
             photo.classList.add("card__image-active");
           }
         });
-        // Открыть модальное окно по кнопке
+        // Открыть модальное окно по кнопке и вставить выбранные данные
       } else if (target.classList.contains("card__order")) {
-        const inputs = card.querySelectorAll(".card__size-input");
-        // Добавляю варианты размеров в модалку
-        // Перебираю все варианты размеров
-        inputs.forEach((input) => {
-          // Записываю только активные размеры
-          if (!input.disabled) {
-            sizes.push(input.value);
-          }
-          // Сохраняю выбранный размер
-          if (input.checked) {
-            optionActive = input;
-          }
-        });
-        // Перебираю массив размеров и создаю <option></option> для каждого
-        sizes.forEach((size) => {
-          option = document.createElement("option");
-          option.value = size;
-          option.innerHTML = size;
-          // Вставляю сохраненный выбранный рамер в модалку
-          if (optionActive && optionActive.value === size) {
-            option.selected = true;
-          }
-          popupSize.appendChild(option);
-        });
-
-        // Перебор картинок товара, для выбора активной
-        photos.forEach((photo) => {
-          if (photo.classList.contains("card__image-active")) {
-            // Создаю копию картинки для модального окна
-            imagePopup = photo.cloneNode(true);
-            // Добавить картинку выбранного товара в модалку
-            imagePopupContainer.appendChild(imagePopup);
-          }
-        });
-
-        // Вставка имени товара в модальное окно
-        let cardName = card.querySelector(".card__title");
-        let popupTitle = document.querySelector(".popup__title");
-        // innerHTML использовал намеренно для затирки предыдущего значения
-        popupTitle.innerHTML = cardName.textContent;
-
-        // Вставка цены на товар в модальное окно
-        let oldPrice = card.querySelector(".card__price-old");
-        let newPrice = card.querySelector(".card__price-new");
-        let popupNewPrice = document.querySelector(".popup__price-new");
-        let popupOldPrice = document.querySelector(".popup__price-old");
-        // innerHTML использовал намеренно для затирки предыдущего значения
-        popupNewPrice.innerHTML = newPrice.textContent;
-        popupOldPrice.innerHTML = oldPrice.textContent;
-        openModalWindow();
+        openModalWindow(card, photos);
         disableScrolling();
       }
     });
@@ -234,12 +243,14 @@ const formSubmit = () => {
       orderButton.disabled = true;
     }
   });
+
   // Отправка формы на сервер
   const textStatus = document.createElement("p");
   textStatus.classList.add("popup__status");
   const errorMessage = "Что-то пошло не так...";
   const loadMessage = "Секунду...";
   const successMessage = "Ваш заказ формлен";
+
   // Через 2 секунды сообщение статуса удаляется
   // И модальное окно закрывается
   const deleteMessage = () => {
@@ -275,3 +286,18 @@ const formSubmit = () => {
   });
 };
 formSubmit();
+
+// Слайдер
+new Swiper(".description__swiper", {
+  simulateTouch: false,
+  touchRatio: 0,
+  slidesPerView: "auto",
+  watchOverfow: true,
+  loop: true,
+  looperSlides: 1,
+  autoplay: {
+    delay: 500,
+  },
+  speed: 1000,
+  effect: "slide",
+});

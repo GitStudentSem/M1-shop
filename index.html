@@ -13,7 +13,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/swiper@7/swiper-bundle.min.js"
+    ></script>
     <script defer src="index.js"></script>
   </head>
   <body>
@@ -79,13 +87,17 @@
           сложных сплетений из средних и широких - для дерзких и раскрепощенных.
         </p>
       </div>
-      <div class="description__images">
-        <!-- FIXME Сделать автоматическую карусель -->
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+      <!-- Slider main container -->
+      <div class="description__swiper swiper">
+        <!-- Additional required wrapper -->
+        <div class="description__swiper-wrapper swiper-wrapper">
+          <!-- Slides -->
+          <!-- FIXME Сделать автоматическую карусель -->
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -94,22 +106,22 @@
                 image/description/example-1/example-1@3x.webp 3x,
                 image/description/example-1/example-1@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-1/example-1.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-1/example-1@2x.png 2x,
-                image/description/example-1/example-1@3x.png 3x,
-                image/description/example-1/example-1@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-1/example-1.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-1/example-1@2x.png 2x,
+                  image/description/example-1/example-1@3x.png 3x,
+                  image/description/example-1/example-1@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -118,22 +130,22 @@
                 image/description/example-2/example-2@3x.webp 3x,
                 image/description/example-2/example-2@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-2/example-2.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-2/example-2@2x.png 2x,
-                image/description/example-2/example-2@3x.png 3x,
-                image/description/example-2/example-2@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-2/example-2.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-2/example-2@2x.png 2x,
+                  image/description/example-2/example-2@3x.png 3x,
+                  image/description/example-2/example-2@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -142,22 +154,22 @@
                 image/description/example-3/example-3@3x.webp 3x,
                 image/description/example-3/example-3@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-3/example-3.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-3/example-3@2x.png 2x,
-                image/description/example-3/example-3@3x.png 3x,
-                image/description/example-3/example-3@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-3/example-3.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-3/example-3@2x.png 2x,
+                  image/description/example-3/example-3@3x.png 3x,
+                  image/description/example-3/example-3@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -166,22 +178,22 @@
                 image/description/example-4/example-4@3x.webp 3x,
                 image/description/example-4/example-4@4x.webp 4x  
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-4/example-4.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-4/example-4@2x.png 2x,
-                image/description/example-4/example-4@3x.png 3x,
-                image/description/example-4/example-4@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-4/example-4.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-4/example-4@2x.png 2x,
+                  image/description/example-4/example-4@3x.png 3x,
+                  image/description/example-4/example-4@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -190,22 +202,22 @@
                 image/description/example-5/example-5@3x.webp 3x,
                 image/description/example-5/example-5@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-5/example-5.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-5/example-5@2x.png 2x,
-                image/description/example-5/example-5@3x.png 3x,
-                image/description/example-5/example-5@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-5/example-5.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-5/example-5@2x.png 2x,
+                  image/description/example-5/example-5@3x.png 3x,
+                  image/description/example-5/example-5@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -214,22 +226,22 @@
                 image/description/example-6/example-6@3x.webp 3x,
                 image/description/example-6/example-6@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-6/example-6.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-6/example-6@2x.png 2x,
-                image/description/example-6/example-6@3x.png 3x,
-                image/description/example-6/example-6@4x.png 4x
-              "
-          /></picture>
-        </div>
-        <!-- FIXME Если не понадобится, то убрать класс description__image-wrapper -->
-        <div class="description__image-wrapper">
-          <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
-          <picture>
-            <!-- <source
+              <img
+                class="description__image"
+                src="image/description/example-6/example-6.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-6/example-6@2x.png 2x,
+                  image/description/example-6/example-6@3x.png 3x,
+                  image/description/example-6/example-6@4x.png 4x
+                "
+            /></picture>
+          </div>
+          <!-- FIXME Если не понадобится, то убрать класс description__swiper-slide swiper-slide -->
+          <div class="description__swiper-slide swiper-slide">
+            <!-- FIXME Сжать изображения, сделать webp версии сжатых картинок -->
+            <picture>
+              <!-- <source
               class='description__image'
               type="image/webp"
               srcset="
@@ -238,16 +250,17 @@
                 image/description/example-7/example-7@3x.webp 3x,
                 image/description/example-7/example-7@4x.webp 4x
               " /> -->
-            <img
-              class="description__image"
-              src="image/description/example-7/example-7.png"
-              alt="Пример ношения портупей"
-              srcset="
-                image/description/example-7/example-7@2x.png 2x,
-                image/description/example-7/example-7@3x.png 3x,
-                image/description/example-7/example-7@4x.png 4x
-              "
-          /></picture>
+              <img
+                class="description__image"
+                src="image/description/example-7/example-7.png"
+                alt="Пример ношения портупей"
+                srcset="
+                  image/description/example-7/example-7@2x.png 2x,
+                  image/description/example-7/example-7@3x.png 3x,
+                  image/description/example-7/example-7@4x.png 4x
+                "
+            /></picture>
+          </div>
         </div>
       </div>
     </section>
