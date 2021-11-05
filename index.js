@@ -97,7 +97,10 @@ popup.addEventListener("click", (e) => {
     popup.classList.remove("popup__active");
     window.onscroll = () => {};
     // Удалить картинку товара после закрытия
-    imagePopupContainer.removeChild(imagePopup);
+    // Проверка на наличие картинки (для маленьких экранов она удаляетя)
+    if (imagePopup) {
+      imagePopupContainer.removeChild(imagePopup);
+    }
     //
     let optionsInModal = popupSize.querySelectorAll("option");
     optionsInModal.forEach((option) => {
@@ -118,10 +121,9 @@ const formSubmit = (input) => {
     if (!input.value.trim()) {
       input.classList.add("popup__error");
       return false;
-    } else {
-      input.classList.remove("popup__error");
-      return true;
     }
+    input.classList.remove("popup__error");
+    return true;
   };
 
   // Блокировка кнопки отправить при не валидных полях
