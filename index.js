@@ -20,6 +20,7 @@ const showCategoryBlock = (showBlock, hideBlock) => {
   showBlock.classList.add("catalog__type-active");
   hideBlock.classList.remove("catalog__type-active");
 };
+
 // Выбор категории товаров
 const categorySelection = () => {
   const inputs = document.querySelector(".catalog__inputs");
@@ -52,6 +53,7 @@ const smoothScroll = (scrollLink) => {
     block: "start",
   });
 };
+
 // Отправка в разные секции из шапки
 const navMenu = document.querySelector(".header__nav");
 navMenu.addEventListener("click", (e) => {
@@ -65,6 +67,7 @@ navMenu.addEventListener("click", (e) => {
     smoothScroll(target);
   }
 });
+
 // Отправление в каталог из главной секции
 const mainButtons = document.querySelector(".main__button-wrapper");
 mainButtons.addEventListener("click", (e) => {
@@ -88,58 +91,40 @@ const openModalWindow = () => {
 };
 
 // Закрытие модального окна
+const closeModal = () => {
+  popup.classList.remove("popup__active");
+  window.onscroll = () => {};
+  // Удалить картинку товара после закрытия
+  // Проверка на наличие картинки (для маленьких экранов она удаляетя)
+  if (imagePopup) {
+    imagePopupContainer.removeChild(imagePopup);
+  }
+  // Очистка <select></select>
+  let optionsInModal = popupSize.querySelectorAll("option");
+  optionsInModal.forEach((option) => {
+    popupSize.removeChild(option);
+  });
+  // Очистка массива размеров
+  sizes = [];
+};
+
+// Обработка событий внутри модального окна
 popup.addEventListener("click", (e) => {
   target = e.target;
   if (
     target.classList.contains("popup__active") ||
     target.classList.contains("popup__close")
   ) {
-    popup.classList.remove("popup__active");
-    window.onscroll = () => {};
-    // Удалить картинку товара после закрытия
-    // Проверка на наличие картинки (для маленьких экранов она удаляетя)
-    if (imagePopup) {
-      imagePopupContainer.removeChild(imagePopup);
-    }
-    //
-    let optionsInModal = popupSize.querySelectorAll("option");
-    optionsInModal.forEach((option) => {
-      popupSize.removeChild(option);
-    });
-    sizes = [];
+    closeModal();
+  } else if (target.classList.contains("popup__order")) {
+    return;
   }
 });
 
-//Валидация полей в модалке
-const formSubmit = (input) => {
-  const name = document.querySelector(".popup__name");
-  const phone = document.querySelector(".popup__phone");
-  const form = document.querySelector(".popup__form");
-  const orderButton = document.querySelector(".popup__order");
-
-  const validation = (input) => {
-    if (!input.value.trim()) {
-      input.classList.add("popup__error");
-      return false;
-    }
-    input.classList.remove("popup__error");
-    return true;
-  };
-
-  // Блокировка кнопки отправить при не валидных полях
-  form.addEventListener("input", () => {
-    if (validation(name) && validation(phone)) {
-      orderButton.disabled = false;
-    } else {
-      orderButton.disabled = true;
-    }
-  });
-};
-formSubmit();
 // Слушатель событий внутри карточки
 const cardListener = () => {
   const cards = document.querySelectorAll(".card");
-  // Циклю для перебора всех карточек с товарами
+  // Цикл для перебора всех карточек с товарами
   cards.forEach((card) => {
     // Слушатель на каждой карточке, который обрабатывает все события
     card.addEventListener("click", (e) => {
@@ -183,6 +168,7 @@ const cardListener = () => {
         // Перебираю массив размеров и создаю <option></option> для каждого
         sizes.forEach((size) => {
           option = document.createElement("option");
+          option.value = size;
           option.innerHTML = size;
           // Вставляю сохраненный выбранный рамер в модалку
           if (optionActive && optionActive.value === size) {
@@ -222,3 +208,70 @@ const cardListener = () => {
   });
 };
 cardListener();
+
+//Работа с формой
+const formSubmit = () => {
+  const name = document.querySelector(".popup__name");
+  const phone = document.querySelector(".popup__phone");
+  const form = document.querySelector("form");
+  // Кнопка заказать
+  const orderButton = document.querySelector(".popup__order");
+
+  const validation = (input) => {
+    if (!input.value.trim()) {
+      input.classList.add("popup__error");
+      return false;
+    }
+    input.classList.remove("popup__error");
+    return true;
+  };
+
+  // Блокировка кнопки отправить при не валидных полях
+  form.addEventListener("input", () => {
+    if (validation(name) && validation(phone)) {
+      orderButton.disabled = false;
+    } else {
+      orderButton.disabled = true;
+    }
+  });
+  // Отправка формы на сервер
+  const textStatus = document.createElement("p");
+  textStatus.classList.add("popup__status");
+  const errorMessage = "Что-то пошло не так...";
+  const loadMessage = "Секунду...";
+  const successMessage = "Ваш заказ формлен";
+  // Через 2 секунды сообщение статуса удаляется
+  // И модальное окно закрывается
+  const deleteMessage = () => {
+    setTimeout(() => {
+      form.removeChild(textStatus);
+      closeModal();
+    }, 3000);
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.appendChild(textStatus);
+
+    const request = new XMLHttpRequest();
+    request.addEventListener("readystatechange", () => {
+      textStatus.textContent = loadMessage;
+      if (request.readyState !== 4) {
+        return;
+      }
+
+      if (request.status === 200) {
+        textStatus.textContent = successMessage;
+        deleteMessage();
+      } else {
+        textStatus.textContent = errorMessage;
+        deleteMessage();
+      }
+    });
+    request.open("POST", "./server.php");
+    request.setRequestHeader("Content-Type", "multipart/form-data");
+    const formData = new FormData(form);
+    request.send(formData);
+  });
+};
+formSubmit();

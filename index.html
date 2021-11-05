@@ -1864,12 +1864,12 @@
       </div>
     </footer>
 
-    <div class="popup popup__active">
+    <div class="popup">
       <div class="popup__window">
         <div class="popup__img-wrapper">
           <!-- Изображение сюда вставляется динамически из JS -->
         </div>
-        <form action="#" class="popup__form">
+        <form class="popup__form">
           <!-- <button class="popup__close"> -->
           <img
             class="popup__close"
@@ -1889,18 +1889,20 @@
             </span>
           </div>
 
-          <select class="popup__size popup__input">
+          <select class="popup__size popup__input" name="user-size">
             <!-- Размеры подставляются динамически -->
           </select>
           <input
             type="text"
             class="popup__name popup__input"
             placeholder="Введите ваше имя"
+            name="user-name"
           />
           <input
             type="number"
             class="popup__phone popup__input"
             placeholder="Введите ваш телефон"
+            name="user-phone"
           />
           <button class="popup__order button" type="submit" disabled>
             Оформить заказ
