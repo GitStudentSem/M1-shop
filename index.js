@@ -85,6 +85,7 @@ mainButtons.addEventListener("click", (e) => {
   smoothScroll(target);
 });
 
+// Добавление вариантов размеров в модалку
 const addSizeToModal = (card) => {
   const inputsSize = card.querySelectorAll(".card__size-input");
   // Добавляю варианты размеров в модалку
@@ -113,6 +114,7 @@ const addSizeToModal = (card) => {
   });
 };
 
+// Добавление картинки в модалку
 const addPictureToModal = (photos) => {
   // Перебор картинок товара, для выбора активной
   photos.forEach((photo) => {
@@ -125,6 +127,7 @@ const addPictureToModal = (photos) => {
   });
 };
 
+// Добаление тектовой информации о товаре в модалку
 const addTextContentToModal = (card) => {
   // Вставка имени товара в модальное окно
   let cardName = card.querySelector(".card__title");
