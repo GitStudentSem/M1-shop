@@ -293,6 +293,7 @@ formSubmit();
 // Слайдер
 new Swiper(".description__swiper", {
   simulateTouch: false,
+  allowTouchMove: false,
   touchRatio: 0,
   slidesPerView: "auto",
   watchOverfow: true,

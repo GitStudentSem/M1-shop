@@ -685,6 +685,11 @@ tr > td:first-child {
   .order__icons > img {
     display: none;
   }
+  /* увеличил кнопку, т.к. для мобильных устройств она слишком маленькая */
+  .popup__close {
+    width: 20px;
+    height: 20px;
+  }
 }
 @media (max-width: 640px) {
   .main__description {
@@ -745,10 +750,6 @@ tr > td:first-child {
     display: block;
     width: 98%;
     height: auto;
-  }
-  .popup__close {
-    width: 20px;
-    height: 20px;
   }
   .popup__form {
     width: 300px;
