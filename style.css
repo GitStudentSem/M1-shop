@@ -746,6 +746,10 @@ tr > td:first-child {
     width: 98%;
     height: auto;
   }
+  .popup__close {
+    width: 20px;
+    height: 20px;
+  }
   .popup__form {
     width: 300px;
     margin: 0 auto;
