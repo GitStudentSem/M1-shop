@@ -104,6 +104,8 @@ const addSizeToModal = (card) => {
   // Перебираю массив размеров и создаю <option></option> для каждого
   sizes.forEach((size) => {
     option = document.createElement("option");
+    // Прикрепляю value для каждого option, что бы связать select.name как ключ
+    // и option.value как значение и отправить эти данные из формы на сервер
     option.value = size;
     option.innerHTML = size;
     // Вставляю сохраненный выбранный рамер в модалку
@@ -156,6 +158,7 @@ const openModalWindow = (card, photos) => {
 // Закрытие модального окна
 const closeModal = () => {
   popup.classList.remove("popup__active");
+  // Рахблокировать скролл
   window.onscroll = () => {};
   // Удалить картинку товара после закрытия
   // Проверка на наличие картинки (для маленьких экранов она удаляетя)
@@ -180,6 +183,7 @@ popup.addEventListener("click", (e) => {
     target.classList.contains("popup__close")
   ) {
     closeModal();
+    // Отключаю слушатель но кнопке отправить
   } else if (target.classList.contains("popup__order")) {
     return;
   }
@@ -254,12 +258,13 @@ const formSubmit = () => {
   const loadMessage = "Секунду...";
   const successMessage = "Ваш заказ формлен";
 
-  // Через 2 секунды сообщение статуса удаляется
+  // Через 3 секунды сообщение статуса удаляется
   // И модальное окно закрывается
   const deleteMessage = () => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       form.removeChild(textStatus);
       closeModal();
+      clearTimeout(timer);
     }, 3000);
   };
 
@@ -292,15 +297,17 @@ formSubmit();
 
 // Слайдер
 new Swiper(".description__swiper", {
-  simulateTouch: false,
-  allowTouchMove: false,
-  touchRatio: 0,
+  // Эти параметры позволяют отключить управление слайдером при перетаскивании
+  // simulateTouch: false,
+  // allowTouchMove: false,
+  // touchRatio: 0,
   slidesPerView: "auto",
   watchOverfow: true,
   loop: true,
   looperSlides: 1,
   autoplay: {
     delay: 500,
+    disableOnInteraction: false,
   },
   speed: 1000,
   effect: "slide",
