@@ -47,7 +47,6 @@ const disableScrolling = () => {
 // Функция для плавного скролла
 const smoothScroll = (scrollLink) => {
   const id = scrollLink.getAttribute("href");
-  console.log(document.querySelector(id));
   document.querySelector(id).scrollIntoView({
     behavior: "smooth",
     block: "start",
@@ -59,13 +58,7 @@ const navMenu = document.querySelector(".header__nav");
 navMenu.addEventListener("click", (e) => {
   let target = e.target;
   e.preventDefault();
-  if (target.getAttribute("href") === "#catalog") {
-    smoothScroll(target);
-  } else if (target.getAttribute("href") === "#description") {
-    smoothScroll(target);
-  } else if (target.getAttribute("href") === "#order") {
-    smoothScroll(target);
-  }
+  smoothScroll(target);
 });
 
 // Отправление в каталог из главной секции
@@ -251,13 +244,6 @@ const formSubmit = () => {
     }
   });
 
-  // Отправка формы на сервер
-  const textStatus = document.createElement("p");
-  textStatus.classList.add("popup__status");
-  const errorMessage = "Что-то пошло не так...";
-  const loadMessage = "Секунду...";
-  const successMessage = "Ваш заказ формлен";
-
   // Через 3 секунды сообщение статуса удаляется
   // И модальное окно закрывается
   const deleteMessage = () => {
@@ -267,6 +253,13 @@ const formSubmit = () => {
       clearTimeout(timer);
     }, 3000);
   };
+
+  // Отправка формы на сервер
+  const textStatus = document.createElement("p");
+  textStatus.classList.add("popup__status");
+  const errorMessage = "Что-то пошло не так...";
+  const loadMessage = "Секунду...";
+  const successMessage = "Ваш заказ формлен";
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
